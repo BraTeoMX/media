@@ -96,7 +96,7 @@ class VideoController extends Controller
         $request->validate([
             'tituloVideo' => 'required',
             'descripcionVideo' => 'required',
-            'cargaVideo' => 'required|file|mimes:mp4,avi,mov', // Asegúrate de incluir los formatos que necesitas
+            'cargaVideo' => 'required|file|mimes:mp4,webm', // Asegúrate de incluir los formatos que necesitas
             'categoria_id' => 'required', 
             'subcategoria_id' => 'required' 
         ]);
