@@ -21,11 +21,6 @@
             <i class="fas fa-home"></i> Inicio
           </a>
         </li>
-        <li class="nav-item">
-          <a href="{{ url('/perfil') }}" class="nav-link">
-            <i class="fas fa-user"></i> Perfil
-          </a>
-        </li>
         <!-- Primer elemento colapsable -->
         <li class="nav-item">
             <a href="#" class="nav-link" data-bs-toggle="collapse" data-bs-target="#multimediaCollapse">
@@ -42,27 +37,6 @@
                 </ul>
             </div>
         </li>
-        <!-- Segundo elemento colapsable -->
-        <li class="nav-item">
-            <a href="#" class="nav-link" data-bs-toggle="collapse" data-bs-target="#adicionalCollapse">
-                <i class="fas fa-star"></i> Adicional
-            </a>
-            <div class="collapse" id="adicionalCollapse">
-                <ul class="nav flex-column ml-3 custom-indent">
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Uno</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Dos</a>
-                    </li>
-                </ul>
-            </div>
-        </li>
-        
-        <li class="nav-item">
-          <a href="#" class="nav-link">
-            <i class="fas fa-cog"></i> Configuración
-          </a>
-        </li>
+        <!-- Fin de Primer elemento colapsable --
     </ul>      
 </div>
