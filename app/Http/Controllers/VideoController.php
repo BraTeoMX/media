@@ -108,7 +108,7 @@ class VideoController extends Controller
         // Procesar el archivo de video
         if ($request->hasFile('cargaVideo')) {
             $videoFile = $request->file('cargaVideo');
-            $videoPath = $videoFile->store('videos', 'public'); // Cambia 'public' por el disco que desees usar
+            $videoPath = $videoFile->store('videoss', 'public'); // Cambia 'public' por el disco que desees usar
 
             $video = new Video();
             $video->titulo = strtoupper($tituloVideo);

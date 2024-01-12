@@ -27,7 +27,8 @@ Route::middleware(['auth'])->group(function () {
     // Añadir esta nueva ruta para la vista de reporte de etiquetas
     Route::get('/reporte_etiqueta', [App\Http\Controllers\ReporteEtiquetaController::class, 'index'])->name('reporte_etiqueta');
     //seccion para pruebas de la seccion multimedia 
-	Route::get('/video', 'App\Http\Controllers\videoController@video')->name('video.video');
+	Route::get('/video', 'App\Http\Controllers\VideoController@video')->name('video.video');
+
 	Route::get('/videoMostrar', 'App\Http\Controllers\videoController@videoMostrar')->name('video.videoMostrar');
 	Route::post('/registroVideo', 'App\Http\Controllers\VideoController@registroVideo')->name('registroVideo');
 	// Ruta para actualizar el estatus de un video 
