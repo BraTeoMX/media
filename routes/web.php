@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\VideoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -51,9 +51,7 @@ Route::middleware(['auth'])->group(function () {
 
 
 	// ruta para los videos
-	Route::get('/video/{filename}', 'VideoController@stream')->name('video.stream');
-	Route::get('/video/{filename}', 'VideoStreamController@streamVideo');
-
+	Route::get('/stream/{videoPath}', [VideoController::class, 'stream'])->where('videoPath', '.*');
 
 
 });

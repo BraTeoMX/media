@@ -114,7 +114,7 @@
                                                                             <div id="collapseVideo{{ $video->id }}" class="accordion-collapse collapse" aria-labelledby="headingVideo{{ $video->id }}" data-bs-parent="#accordionVideo-{{ $video->id }}">
                                                                                 <div class="accordion-body">
                                                                                     <p>{!! nl2br(e($video->descripcion)) !!}</p>
-                                                                                    <button type="button" class="btn btn-danger" onclick="showVideo('{{ $video->filename }}')">
+                                                                                    <button type="button" class="btn btn-danger" onclick="showVideo('{{ Storage::url($video->link) }}')">
                                                                                         Ver Video
                                                                                     </button>
 
@@ -155,7 +155,7 @@
 </div>
 
 <script>
-    function showVideo(filename) {
+    function showVideo(videoPath) {
         var currentModal = document.querySelector('.modal.show');
         var categoryId = currentModal.id.split('-')[1];
         var videoContainer = document.getElementById('videoColumn-' + categoryId);
@@ -170,15 +170,13 @@
         video.setAttribute('controls', '');
 
         var source = document.createElement('source');
-        source.setAttribute('src', '/video/stream/' + filename); // URL actualizada
+        source.setAttribute('src', '/stream/' + videoPath.replace('/storage/', '')); // Aquí se actualiza la ruta
         source.setAttribute('type', 'video/mp4');
 
-        // Añadir la fuente al elemento de video
         video.appendChild(source);
-
-        // Añadir el video al contenedor utilizando appendChild
         videoContainer.appendChild(video);
     }
+
 
 
 </script>
@@ -355,6 +353,18 @@
 
 </style>
 
+<style>
+    .accordion-button {
+    background-color: inherit; /* Hace que el botón tome el color de fondo de su contenedor padre */
+    color: #FFFFFF;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: inherit !important; /* Mantiene el color incluso cuando el acordeón está expandido */
+    /* Otros estilos que quieras mantener o cambiar cuando el acordeón está expandido */
+}
+
+</style>
 
 
         
