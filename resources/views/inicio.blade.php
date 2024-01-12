@@ -114,7 +114,7 @@
                                                                             <div id="collapseVideo{{ $video->id }}" class="accordion-collapse collapse" aria-labelledby="headingVideo{{ $video->id }}" data-bs-parent="#accordionVideo-{{ $video->id }}">
                                                                                 <div class="accordion-body">
                                                                                     <p>{!! nl2br(e($video->descripcion)) !!}</p>
-                                                                                    <button type="button" class="btn btn-danger" onclick="showVideo('{{ Storage::url($video->link) }}')">
+                                                                                    <button type="button" class="btn btn-danger" onclick="showVideo('{{ $video->filename }}')">
                                                                                         Ver Video
                                                                                     </button>
 
@@ -155,7 +155,7 @@
 </div>
 
 <script>
-    function showVideo(videoURL) {
+    function showVideo(filename) {
         var currentModal = document.querySelector('.modal.show');
         var categoryId = currentModal.id.split('-')[1];
         var videoContainer = document.getElementById('videoColumn-' + categoryId);
@@ -170,7 +170,7 @@
         video.setAttribute('controls', '');
 
         var source = document.createElement('source');
-        source.setAttribute('src', videoURL);
+        source.setAttribute('src', '/video/stream/' + filename); // URL actualizada
         source.setAttribute('type', 'video/mp4');
 
         // Añadir la fuente al elemento de video

@@ -52,6 +52,8 @@ Route::middleware(['auth'])->group(function () {
 
 	// ruta para los videos
 	Route::get('/video/{filename}', 'VideoController@stream')->name('video.stream');
+	Route::get('/video/{filename}', 'VideoStreamController@streamVideo');
+
 
 
 });

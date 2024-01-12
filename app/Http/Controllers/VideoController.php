@@ -108,7 +108,7 @@ class VideoController extends Controller
         // Procesar el archivo de video
         if ($request->hasFile('cargaVideo')) {
             $videoFile = $request->file('cargaVideo');
-            $videoPath = $videoFile->store('videoss', 'public'); // Cambia 'public' por el disco que desees usar
+            $videoPath = $videoFile->store('videos', 'public'); // Cambia 'public' por el disco que desees usar
 
             $video = new Video();
             $video->titulo = strtoupper($tituloVideo);
@@ -162,26 +162,6 @@ class VideoController extends Controller
         $Videos = Video::all();
         return  view('video.videoMostrar', compact('mensaje', 'Videos'));  
     }
-
-    public function stream($filename)
-    {
-        // Construir la ruta absoluta al archivo en el sistema de archivos
-        $path = storage_path('app/public/videos/' . $filename);
-
-        // Verificar si el archivo existe
-        if (!file_exists($path)) {
-            abort(404, 'El archivo no existe.');
-        }
-
-        $stream = function () use ($path) {
-            readfile($path);
-        };
-
-        return response()->stream($stream, 200, [
-            "Content-Type" => "video/mp4",
-        ]);
-    }
-
 
 
 
