@@ -37,6 +37,6 @@
                 </ul>
             </div>
         </li>
-        <!-- Fin de Primer elemento colapsable --
+        <!-- Fin de Primer elemento colapsable -->
     </ul>      
 </div>

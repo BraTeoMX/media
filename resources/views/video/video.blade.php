@@ -43,6 +43,7 @@
             </div>
             <div class="row">
               <div class="col-md-6 form-group">
+                <br>
                   <button type="button" class="btn btn-success btn-block" onclick="document.getElementById('cargaVideo').click();">
                       Cargar Video
                   </button>
@@ -52,6 +53,7 @@
               <div class="col-md-6 form-group">
                 
                 <div class="col-md-6 form-group">
+                  <br>
                   <label for="categoria" class="form-label">Categoría del video:</label>
                   <select class="custom-select" id="categoria" name="categoria_id" required>
                     <option value="">Seleccione una categoría</option>
@@ -81,22 +83,21 @@
             <button type="submit" class="btn btn-primary">Registrar / Subir contenido</button>
         </form>
         </div>
-
+        <br><br>
           <!-- Acordeón -->
       <div id="accordion">
-        
-        <!-- Tarjeta para Planta 1 -->
+        <!-- Tarjeta  -->
         <div class="card">
           <div class="card-header" id="headingOne">
-            <h5 class="mb-0">
-              <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                Visualizar datos almacenados   
-              </button>
-            </h5>
+              <h5 class="mb-0">
+                  <button class="btn btn-link" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                      Visualizar datos almacenados   
+                  </button>
+              </h5>
           </div>
-          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+          <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            
             <div class="card-body">
-              <p>prueba </p>
                 {{-- Campo de búsqueda --}}
                 <div>
                   <input type="text" class="form-control"  id="searchInput" onkeyup="filterTable()" placeholder="Buscar por nombre o descripción...">
@@ -125,10 +126,10 @@
                                       @method('PATCH')
                                       @if($video->estatus == 'A')
                                           <input type="hidden" name="estatus" value="B">
-                                          <button class="btn-danger" type="submit">Dar de Baja</button>
+                                          <button class="btn btn-danger" type="submit">Dar de Baja</button>
                                       @else
                                           <input type="hidden" name="estatus" value="A">
-                                          <button class="btn-secondary" type="submit">Dar de Alta</button>
+                                          <button class="btn btn-secondary" type="submit">Dar de Alta</button>
                                       @endif
                                   </form>
                               </td>
@@ -187,7 +188,6 @@
         line-height: 1.5;
         color: #495057;
         background-color: #fff;
-        background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="%23333" d="M173.898 136.504l114.103 114.102 114.102-114.102c4.686-4.686 12.284-4.686 16.97 0 4.686 4.686 4.686 12.284 0 16.971l-128 128c-4.686 4.686-12.284 4.686-16.971 0l-128-128c-4.686-4.686-4.686-12.284 0-16.971 4.686-4.686 12.284-4.686 16.97 0z"/></svg>');
         background-repeat: no-repeat;
         background-position: right .75rem center;
         background-size: .65em auto;
@@ -208,20 +208,6 @@
         box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25);
     }
 
-    /* Option to add an arrow icon */
-    .custom-select::after {
-        content: "\25BC";
-        position: absolute;
-        top: 50%;
-        right: 1rem;
-        transform: translateY(-50%);
-        pointer-events: none;
-    }
-
-    /* When using custom background SVG for the select */
-    .custom-select::-ms-expand {
-        display: none; /* for IE11 */
-    }
 
   </style>
   

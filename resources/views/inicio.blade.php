@@ -81,7 +81,9 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h3 class="modal-title" id="categoriaLabel-{{ $categoria->id }}" style="color: {{ $color }}; margin: auto;">{{ $categoria->nombre }}</h3>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Cerrar">
+                                    CERRAR
+                                </button>
                             </div>
                             <div class="modal-body">
                                 <div class="row">
