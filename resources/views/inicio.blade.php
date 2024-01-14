@@ -6,18 +6,19 @@
     <div class="container-fluid">
         <div class="card-header card-header-info card-header-icon">
             <h2 id="texto-escritura" class="estilo-mensaje fade-inH2">Centro de Desarrollo Habilidades Intimark</h2>
-
+            <hr>
+            <br>
             <div class="row">
                 {{-- Iterar sobre las categorías --}}
                 @php
                         $colores = [
+                            '#1A237E', // Azul oscuro, azul marino
                             '#6A1B9A', // Púrpura más vibrante
                             '#1B5E20', // Verde bosque
                             '#4E342E', // Marrón oscuro
                             '#FF6F00', // Naranja brillante
                             '#4A148C', // Púrpura oscuro
                             '#880E4F', // Marrón muy oscuro, casi negro
-                            '#1A237E', // Azul oscuro, azul marino
                             '#01579B', // Azul más oscuro, azul medianoche
                             '#004D40', // Verde azulado oscuro, color petróleo
                             '#BF360C', // Rojo anaranjado oscuro, terracota
@@ -35,13 +36,13 @@
 
                         $index = 0;
                         $coloresTitulo = [
+                            '#303F9F', // Azul claro, no tan oscuro
                             '#8E24AA', // Púrpura más claro
                             '#388E3C', // Verde más claro
                             '#6D4C41', // Marrón claro
                             '#FFA000', // Naranja claro
                             '#7B1FA2', // Púrpura claro
                             '#BC477B', // Marrón claro, no tan oscuro
-                            '#303F9F', // Azul claro, no tan oscuro
                             '#0277BD', // Azul claro, no tan oscuro
                             '#00695C', // Verde azulado claro, no tan oscuro
                             '#D84315', // Rojo anaranjado claro, no tan oscuro
@@ -80,7 +81,7 @@
                     <div class="modal-dialog modal-fullscreen-custom" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h3 class="modal-title" id="categoriaLabel-{{ $categoria->id }}" style="color: {{ $color }}; margin: auto;">{{ $categoria->nombre }}</h3>
+                                <h3 class="modal-title" id="categoriaLabel-{{ $categoria->id }}" style="color: {{ $color }};">{{ $categoria->nombre }}</h3>
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Cerrar">
                                     CERRAR
                                 </button>
@@ -92,8 +93,8 @@
                                         <div class="accordion" id="accordionCategoria-{{ $categoria->id }}">
                                             @foreach($categoria->subcategorias as $subcategoria)
                                                 <div class="card custom-card">
-                                                    <div class="card-header custom-card-header" id="headingSubcategoria{{ $subcategoria->id }}">
-                                                        <h2 class="mb-0" style="background-color: {{ $color }}">
+                                                    <div class="card-header custom-card-header" id="headingSubcategoria{{ $subcategoria->id }}" style="background-color: {{ $color }}">
+                                                        <h2 class="mb-0">
                                                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSubcategoria{{ $subcategoria->id }}" aria-expanded="false" aria-controls="collapseSubcategoria{{ $subcategoria->id }}">
                                                                 {{ $subcategoria->nombre }}
                                                               </button>
@@ -106,8 +107,8 @@
                                                                 @foreach($subcategoria->videos as $video)
                                                                     <div class="accordion" id="accordionVideo-{{ $video->id }}">
                                                                         <div class="card custom-card">
-                                                                            <div class="card-header custom-card-header" id="headingVideo{{ $video->id }}">
-                                                                                <h2 class="mb-0" style="background-color: {{ $colorTitulo }}">
+                                                                            <div class="card-header custom-card-header" id="headingVideo{{ $video->id }}" style="background-color: {{ $colorTitulo }}">
+                                                                                <h2 class="mb-0">
                                                                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseVideo{{ $video->id }}" aria-expanded="false" aria-controls="collapseVideo{{ $video->id }}">
                                                                                         {{ $video->titulo }}
                                                                                     </button>
@@ -308,11 +309,12 @@
         font-weight: bold;
         color: black;
         font-family: Arial, Helvetica, sans-serif;
+        font-size: 50px;
     }
 
     .modal-title{
+        margin: auto;
         font-weight: bold;
-        text-align: center !important; /* Usa !important para asegurar prioridad */
     }
 
 
