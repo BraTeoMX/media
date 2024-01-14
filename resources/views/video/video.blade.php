@@ -9,9 +9,8 @@
          {{ session('error') }}
      </div>
      @endif
-
      @if(session('success'))
-     <div class="alert alert-success">
+     <div class="alert alerta-exito">
          {{ session('success') }}
          @if(session('sorteo'))
              <br>{{ session('sorteo') }}
@@ -23,6 +22,15 @@
              {{ session('status') }}
          </div>
      @endif
+     <style>
+        .alerta-exito {
+          background-color: #28a745; /* Color de fondo verde */
+          color: white; /* Color de texto blanco */
+          padding: 20px;
+          border-radius: 15px;
+          font-size: 20px;
+        }
+     </style>
      {{-- ... el resto de tu vista ... --}}
     <div class="container-fluid">
         <div class="card-header card-header-info card-header-icon">
@@ -44,7 +52,7 @@
             <div class="row">
               <div class="col-md-6 form-group">
                 <br>
-                  <button type="button" class="btn btn-success btn-block" onclick="document.getElementById('cargaVideo').click();">
+                  <button type="button" class="btn btn-success d-block w-100" onclick="document.getElementById('cargaVideo').click();">
                       Cargar Video
                   </button>
                   <input type="file" class="form-control" id="cargaVideo" name="cargaVideo" required onchange="vistaPrevia(event)" style="display: none;">
@@ -77,10 +85,10 @@
             
             </div>
           
-          
-          
-    
-            <button type="submit" class="btn btn-primary">Registrar / Subir contenido</button>
+            <div>
+              <br>
+              <button type="submit" class="btn btn-primary d-block w-100">Registrar / Subir contenido</button>
+            </div>
         </form>
         </div>
         <br><br>
@@ -88,12 +96,12 @@
       <div id="accordion">
         <!-- Tarjeta  -->
         <div class="card">
-          <div class="card-header" id="headingOne">
-              <h5 class="mb-0">
-                  <button class="btn btn-link" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                      Visualizar datos almacenados   
+            <div class="card-header" id="headingOne">
+              <h4 class="mb-0">
+                  <button class="btn d-block w-100" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                      Visualizar lista de videos almacenados
                   </button>
-              </h5>
+              </h4>
           </div>
           <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
             

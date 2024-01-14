@@ -120,7 +120,7 @@ class VideoController extends Controller
             $video->subcategoria_id = $request->input('subcategoria_id'); 
             $video->save();
             //dd($request->all());
-            return back()->with('success', 'Todos los datos han sido actualizados correctamente.');
+            return back()->with('success', 'Video cargado correctamente.');
         }
 
         return back()->with('error', 'El archivo de video es requerido.');
