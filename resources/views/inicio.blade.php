@@ -5,7 +5,7 @@
 <div class="content">
     <div class="container-fluid">
         <div class="card-header card-header-info card-header-icon">
-            <h2 id="texto-escritura" class="estilo-mensaje fade-inH2">Centro de Desarrollo Habilidades Intimark</h2>
+            <h2 class="estilo-mensaje fade-inH2">Centro de Desarrollo Habilidades Intimark</h2>
             <hr>
             <br>
             <div class="row">
@@ -104,8 +104,8 @@
                                                         <div class="card-body" style="margin-left: 20px;">
                                                             <!-- Información de la Subcategoría -->
                                                             <div class="subcategoria-info">
-                                                                @foreach($subcategoria->videos as $video)
-                                                                    <div class="accordion" id="accordionVideo-{{ $video->id }}">
+                                                                <div class="accordion" id="accordionVideos">
+                                                                    @foreach($subcategoria->videos as $video)
                                                                         <div class="card custom-card">
                                                                             <div class="card-header custom-card-header" id="headingVideo{{ $video->id }}" style="background-color: {{ $colorTitulo }}">
                                                                                 <h2 class="mb-0">
@@ -114,19 +114,18 @@
                                                                                     </button>
                                                                                 </h2>
                                                                             </div>
-                                                                            <div id="collapseVideo{{ $video->id }}" class="accordion-collapse collapse" aria-labelledby="headingVideo{{ $video->id }}" data-bs-parent="#accordionVideo-{{ $video->id }}">
+                                                                            <div id="collapseVideo{{ $video->id }}" class="accordion-collapse collapse" aria-labelledby="headingVideo{{ $video->id }}" data-bs-parent="#accordionVideos">
                                                                                 <div class="accordion-body">
                                                                                     <p>{!! nl2br(e($video->descripcion)) !!}</p>
                                                                                     <button type="button" class="btn btn-danger" onclick="showVideo('{{ Storage::url($video->link) }}')">
                                                                                         Ver Video
                                                                                     </button>
-
                                                                                 </div>
                                                                             </div>
                                                                         </div>
-                                                                    </div>
-                                                                @endforeach
-                                                            </div>
+                                                                    @endforeach
+                                                                </div>
+                                                            </div>                                                            
                                                         </div>
                                                     </div>
                                                 </div>

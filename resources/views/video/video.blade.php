@@ -91,7 +91,7 @@
             </div>
         </form>
         </div>
-        <br><br>
+        <br><hr><br>
           <!-- Acordeón -->
       <div id="accordion">
         <!-- Tarjeta  -->

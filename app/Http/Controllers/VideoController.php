@@ -28,7 +28,7 @@ class VideoController extends Controller
 
     public function altaCategoriaSub(Request $request)
     {
-        $mensaje = "Hola mundo ";
+        $mensaje = "Alta y Bajas para Categoria y Sub-categoria ";
         $categoriaMostrar = Categoria::where('estatus', 'A')->get();
         $categorias = Categoria::all(); // Obtener todas las categorías
 
