@@ -29,36 +29,41 @@
 
     <div class="container-fluid">
         <div class="card-header card-header-info card-header-icon">
-
           {{-- Formulario para agregar una nueva categoría --}}
           <form action="{{ route('categoria.store') }}" method="POST">
-            @csrf
-            <div class="form-group">
-              <label for="nombreCategoria">Nombre de la Categoría</label>
-              <input type="text" class="form-control" id="nombreCategoria" name="nombre_categoria" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Guardar Categoría</button>
+              @csrf
+              <div class="form-group">
+                  <label for="nombreCategoria">Nombre de la Categoría</label>
+                  <input type="text" class="form-control" id="nombreCategoria" name="nombre_categoria" required>
+              </div>
+              <button type="submit" class="btn btn-primary d-block w-100">Guardar Categoría</button>
           </form>
-
+      
+          <!-- Migas de pan entre los formularios -->
+          <hr>
+      
           {{-- Formulario para agregar una nueva subcategoría --}}
           <form action="{{ route('subcategoria.store') }}" method="POST">
-            @csrf
-            <div class="form-group">
-              <label for="categoria">Categoría</label>
-              <select class="form-control" id="categoria" name="categoria_id" required>
-                @foreach($categoriaMostrar as $categoria)
-                  <option value="{{ $categoria->id }}">{{ $categoria->nombre }}</option>
-                @endforeach
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="nombreSubcategoria">Nombre de la Subcategoría</label>
-              <input type="text" class="form-control" id="nombreSubcategoria" name="nombre_subcategoria" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Guardar Subcategoría</button>
+              @csrf
+              <div class="form-group">
+                  <label for="categoria">Categoría</label>
+                  <select class="form-control" id="categoria" name="categoria_id" required>
+                      @foreach($categoriaMostrar as $categoria)
+                          <option value="{{ $categoria->id }}">{{ $categoria->nombre }}</option>
+                      @endforeach
+                  </select>
+              </div>
+              <div class="form-group">
+                  <label for="nombreSubcategoria">Nombre de la Subcategoría</label>
+                  <input type="text" class="form-control" id="nombreSubcategoria" name="nombre_subcategoria" required>
+              </div>
+              <button type="submit" class="btn btn-primary d-block w-100">Guardar Subcategoría</button>
           </form>
-
-        </div>
+      
+          <!-- Migas de pan después del segundo formulario -->
+          <hr>
+      </div>
+    
 
         <div class="accordion" id="accordionExample">
           <div class="accordion-item">
