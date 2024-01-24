@@ -71,7 +71,7 @@
                         <div class="card-body d-flex flex-column card-text-white" style="color: {{ $color }};">
                             <h5 class="card-title" style="color: {{ $color }};">{{ $categoria->nombre }}</h5>
                             <p class="card-text" style="color: {{ $color }};">Descripción o más detalles de la categoría</p>
-                            <button type="button" class="btn btn-personalizado mt-auto" data-bs-toggle="modal" data-bs-target="#categoriaModal-{{ $categoria->id }}">Administrar</button>
+                            <button type="button" class="btn btn-personalizado mt-auto" data-bs-toggle="modal" data-bs-target="#categoriaModal-{{ $categoria->id }}">ENTRAR</button>
                         </div>
                     </div>
                 </div>
@@ -288,7 +288,7 @@
     }
 
     .card-title {
-        font-size: 30px; /* Ajusta este valor según tus necesidades */
+        font-size: 25px; /* Ajusta este valor según tus necesidades */
         font-weight: bold;
     }
 

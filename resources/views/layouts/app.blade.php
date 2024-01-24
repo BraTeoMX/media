@@ -30,7 +30,7 @@
         <!-- Regular Sidebar for larger screens -->
         <!-- Use Bootstrap's d-none class to hide on xs to lg screens -->
         <div class="sidebar d-none d-lg-block">
-            @if(Auth::check() && Auth::user()->puesto != 'normal')
+            @if(Auth::check() && Auth::user()->puesto != 'invitado')
                 @include('layouts.navbars.sidebar')
             @endif
         </div>
