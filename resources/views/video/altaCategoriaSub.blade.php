@@ -100,10 +100,10 @@
                                                 @method('PATCH')
                                                 @if($categoria->estatus == 'A')
                                                     <input type="hidden" name="estatus" value="B">
-                                                    <button class="btn-danger" type="submit">Dar de Baja</button>
+                                                    <button class="btn btn-danger" type="submit">Dar de Baja</button>
                                                 @else
                                                     <input type="hidden" name="estatus" value="A">
-                                                    <button class="btn-secondary" type="submit">Dar de Alta</button>
+                                                    <button class="btn btn-success" type="submit">Dar de Alta</button>
                                                 @endif
                                             </form>
                                         </td>
@@ -136,10 +136,10 @@
                                                 @method('PATCH')
                                                 @if($subcategoria->estatus == 'A')
                                                     <input type="hidden" name="estatus" value="B">
-                                                    <button class="btn-danger" type="submit">Dar de Baja</button>
+                                                    <button class="btn btn-danger" type="submit">Dar de Baja</button>
                                                 @else
                                                     <input type="hidden" name="estatus" value="A">
-                                                    <button class="btn-secondary" type="submit">Dar de Alta</button>
+                                                    <button class="btn btn-success" type="submit">Dar de Alta</button>
                                                 @endif
                                             </form>
                                         </td>
