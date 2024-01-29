@@ -68,7 +68,7 @@
                     <div style="display: flex; justify-content: center;">
                         <img src="{{ asset('images/logo.png') }}" alt="Mi Imagen" width="300">
                     </div>
-                    <h4 style="text-align: center">Juntos por un mejor Intimark</h4>
+                    <h4 style="text-align: center">Juntos por un mejor Intimark </h4>
                 </div>
             </div>
         </div>
